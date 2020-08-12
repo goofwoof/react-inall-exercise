@@ -1,0 +1,31 @@
+.headerLink {
+    float: left;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    text-decoration: none;
+}
+
+.headerShow {
+    float: left;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    text-decoration: underline;
+}
+
+
+.cal {
+    float: left;
+    width: 20%;
+    padding: 0 10% 0 20%;
+}
+
+.tim {
+    float: left;
+    width: 20%;
+    padding: 0 20% 0 10%;
+}
+
+.low {
+    clear: both;
+    text-align: center;
+}
