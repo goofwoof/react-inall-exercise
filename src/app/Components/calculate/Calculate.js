@@ -5,7 +5,7 @@ class Calculate extends Component {
     constructor(props){
         super(props);
         this.state={
-            line:'1+3',
+            line:'',
             number:[1,2,3,4,5,6,7,8,9,0],
             method:['+','-','*'],
             get:'='
@@ -26,12 +26,8 @@ class Calculate extends Component {
 
     handleCalculate = ()=>{
         this.setState({
-            line: this.state.line +'='+this.getResult(this.state.line)
+            line: eval(`0${this.state.line}`)
         })
-    }
-
-    getResult = ()=>{
-        return 4;
     }
   render() {
     return <div className="backback">
@@ -40,12 +36,12 @@ class Calculate extends Component {
         <input type="text" id="line" name="line" value={this.state.line} readOnly className="shoucal"/>
         {
             this.state.method.map(option=>
-                <button className="method"  key={option}>{option}</button>
+                <button className="method" onClick={()=>this.handleChange(option)} key={option}>{option}</button>
             )
         }
         {
             this.state.number.map(number=>
-                <button className="number"  key={number}>{number}</button>
+                <button className="number" onClick={()=>this.handleChange(number)} key={number}>{number}</button>
             )
         }
         <button className="Clear" onClick={this.handleClear}>Clear</button>
@@ -64,8 +60,3 @@ class Calculate extends Component {
 }
 
 export default Calculate;
-
-// onClick={this.handleChange(option)}
-//onClick={this.handleChange(number)}
-//
-//
